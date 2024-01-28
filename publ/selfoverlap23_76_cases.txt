@@ -1,0 +1,699 @@
+
+Below are the solutions of the 76 cases that are treated by the ILP in section 4.5.
+One can either solve the ILP or parse this file.
+
+The first row in each case contains the input:
+- hist: a histogram of the cones by index. The bins are [ -.25, -.5, -.75, -1, -1.25, -1.5, -1.75, -2 ].
+- index: the adjusted index of the iset.
+- odd: if it's an odd iset (boolean 1/0 for yes/no).
+- loop4, loop2, tree: number of external connections of these types.
+- pair: if the iset is part of an odd pair and has an external joint connection.
+
+The next seven rows comprise a table similar to the one in the figures, where there's a column for each cone in the iset. The first row is the number of external connections. The next five rows give the number of each internal connection type. The last row gives the defect after connections are made.
+
+---
+
+Case 1: hist=[0, 0, 0, 1, 0, 0, 0, 0], index=-1.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 1
+ntreeConn       : 0
+njoint_loop_conn: 0
+nloop4conn      : 1
+nloop2conn      : 0
+nloop0conn      : 0
+defect          : 180
+
+Case 2: hist=[0, 0, 0, 1, 0, 0, 0, 0], index=-1.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1
+ntreeConn       : 0
+njoint_loop_conn: 0
+nloop4conn      : 1
+nloop2conn      : 0
+nloop0conn      : 0
+defect          : 0
+
+Case 3: hist=[0, 0, 0, 0, 0, 0, 0, 1], index=0.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0
+ntreeConn       : 0
+njoint_loop_conn: 0
+nloop4conn      : 2
+nloop2conn      : 0
+nloop0conn      : 0
+defect          : 360
+
+Case 4: hist=[0, 0, 0, 0, 0, 0, 0, 1], index=0.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 2
+ntreeConn       : 0
+njoint_loop_conn: 0
+nloop4conn      : 1
+nloop2conn      : 0
+nloop0conn      : 0
+defect          : 0
+
+Case 5: hist=[0, 0, 0, 0, 0, 0, 0, 1], index=0.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 2
+ntreeConn       : 0
+njoint_loop_conn: 0
+nloop4conn      : 1
+nloop2conn      : 0
+nloop0conn      : 0
+defect          : 0
+
+Case 6: hist=[1, 0, 1, 0, 0, 0, 0, 0], index=-1.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 1
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          : 90 90
+
+Case 7: hist=[1, 0, 1, 0, 0, 0, 0, 0], index=-1.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 0 1
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          : -90  90
+
+Case 8: hist=[0, 0, 1, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0
+ntreeConn       : -0  0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 1
+nloop2conn      : 1 0
+nloop0conn      : 0 1
+defect          : 270  90
+
+Case 9: hist=[0, 0, 1, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 0 2
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          : -90  90
+
+Case 10: hist=[0, 0, 1, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 0 2
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          : -90  90
+
+Case 11: hist=[1, 0, 0, 0, 0, 0, 1, 0], index=-2.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 1
+nloop2conn      : 1 0
+nloop0conn      : 0 1
+defect          :  90 270
+
+Case 12: hist=[1, 0, 0, 0, 0, 0, 1, 0], index=-2.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 2 0
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          :  90 -90
+
+Case 13: hist=[1, 0, 0, 0, 0, 0, 1, 0], index=-2.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 2 0
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          :  90 -90
+
+Case 14: hist=[0, 0, 0, 0, 1, 0, 1, 0], index=-3.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 1
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 1
+nloop2conn      : 1 0
+nloop0conn      : 0 1
+defect          : 90 90
+
+Case 15: hist=[0, 0, 0, 0, 1, 0, 1, 0], index=-3.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1 0
+ntreeConn       :  0 -0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 1
+nloop2conn      : 1 0
+nloop0conn      : 0 1
+defect          :  90 -90
+
+Case 16: hist=[0, 1, 2, 0, 0, 0, 0, 0], index=-2.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0
+ntreeConn       : 1 1 0
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 1
+nloop2conn      : 0 1 0
+nloop0conn      : 0 0 1
+defect          : 270   0  90
+
+Case 17: hist=[0, 1, 2, 0, 0, 0, 0, 0], index=-2.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 2 0 0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 1 1
+nloop4conn      : 0 0 0
+nloop2conn      : 0 0 0
+nloop0conn      : 0 0 0
+defect          : -90   0  90
+
+Case 18: hist=[0, 1, 2, 0, 0, 0, 0, 0], index=-2.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 2 0 0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 1 1
+nloop4conn      : 0 0 0
+nloop2conn      : 0 0 0
+nloop0conn      : 0 0 0
+defect          : -90   0  90
+
+Case 19: hist=[0, 0, 2, 0, 0, 1, 0, 0], index=-3.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 0 1
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 1 0
+nloop2conn      : 0 0 1
+nloop0conn      : 0 1 0
+defect          :  0 90 90
+
+Case 20: hist=[0, 0, 2, 0, 0, 1, 0, 0], index=-3.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1 0 0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 1 0
+nloop2conn      : 0 0 1
+nloop0conn      : -0  1  0
+defect          :   0  90 -90
+
+Case 21: hist=[0, 1, 1, 0, 0, 0, 1, 0], index=-3.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 1 0 0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 1 1
+nloop4conn      : 1 0 0
+nloop2conn      : 0 0 0
+nloop0conn      : 0 0 0
+defect          : 90  0 90
+
+Case 22: hist=[0, 1, 1, 0, 0, 0, 1, 0], index=-3.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1 0 0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 1 1
+nloop4conn      : 1 0 0
+nloop2conn      : 0 0 0
+nloop0conn      : 0 0 0
+defect          : -90   0  90
+
+Case 23: hist=[0, 0, 1, 0, 0, 1, 1, 0], index=-4.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0
+ntreeConn       :  0 -0  0
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 1 1
+nloop2conn      :  1 -0  1
+nloop0conn      : 1 1 0
+defect          :  90  90 180
+
+Case 24: hist=[0, 0, 1, 0, 0, 1, 1, 0], index=-4.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 0 0 2
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 1 0
+nloop2conn      : 0 0 1
+nloop0conn      : 0 1 0
+defect          : -90  90   0
+
+Case 25: hist=[0, 0, 1, 0, 0, 1, 1, 0], index=-4.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 0 0 2
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 1 0
+nloop2conn      : 0 0 1
+nloop0conn      : 0 1 0
+defect          : -90  90   0
+
+Case 26: hist=[0, 1, 0, 0, 0, 0, 2, 0], index=-4.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0
+ntreeConn       : 0 0 0
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 1 1
+nloop2conn      :  1 -0  1
+nloop0conn      : 0 1 1
+defect          :  90 180  90
+
+Case 27: hist=[0, 1, 0, 0, 0, 0, 2, 0], index=-4.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 2 0 0
+ntreeConn       : 0 1 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 1
+nloop2conn      : 0 1 0
+nloop0conn      : 1 0 0
+defect          :  90   0 -90
+
+Case 28: hist=[0, 1, 0, 0, 0, 0, 2, 0], index=-4.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 2 0 0
+ntreeConn       : 0 1 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 1
+nloop2conn      : 0 1 0
+nloop0conn      : 1 0 0
+defect          :  90   0 -90
+
+Case 29: hist=[0, 0, 0, 0, 0, 1, 2, 0], index=-5.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 1 0
+ntreeConn       : 0 0 0
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 1 1
+nloop2conn      : 1 0 1
+nloop0conn      : 1 1 0
+defect          : 90  0 90
+
+Case 30: hist=[0, 0, 0, 0, 0, 1, 2, 0], index=-5.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1 0 0
+ntreeConn       : 0 1 1
+njoint_loop_conn:  0  0 -0
+nloop4conn      : 1 1 1
+nloop2conn      : 1 0 0
+nloop0conn      : 0 1 0
+defect          :  90   0 -90
+
+Case 31: hist=[0, 0, 4, 0, 0, 0, 0, 0], index=-3.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         :  0 -0 -0  1
+ntreeConn       : 1 1 0 0
+njoint_loop_conn: 0 1 0 1
+nloop4conn      : 0 0 1 0
+nloop2conn      : 1 0 0 0
+nloop0conn      : 0 0 1 0
+defect          : -90  90  90  90
+
+Case 32: hist=[0, 0, 4, 0, 0, 0, 0, 0], index=-3.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 0 1 0 0
+ntreeConn       : 1 0 0 1
+njoint_loop_conn:  0 -0  1  1
+nloop4conn      : 1 0 0 0
+nloop2conn      : 0 1 0 0
+nloop0conn      : 1 0 0 0
+defect          :  90 -90 -90  90
+
+Case 33: hist=[0, 0, 3, 0, 0, 0, 1, 0], index=-4.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0 0
+ntreeConn       : 0 1 0 1
+njoint_loop_conn:  1  1  0 -0
+nloop4conn      : 1 0 1 0
+nloop2conn      : -0  0  0  1
+nloop0conn      : 0 0 1 0
+defect          : 270  90  90 -90
+
+Case 34: hist=[0, 0, 3, 0, 0, 0, 1, 0], index=-4.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 0 2 0 0
+ntreeConn       : 1 1 1 1
+njoint_loop_conn: 0 0 1 1
+nloop4conn      : 1 0 0 0
+nloop2conn      : 0 0 0 0
+nloop0conn      : 0 0 0 0
+defect          : -90 -90  90  90
+
+Case 35: hist=[0, 0, 3, 0, 0, 0, 1, 0], index=-4.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 0 2 0 0
+ntreeConn       : 1 1 1 1
+njoint_loop_conn: 0 0 1 1
+nloop4conn      : 1 0 0 0
+nloop2conn      : 0 0 0 0
+nloop0conn      : 0 0 0 0
+defect          : -90 -90  90  90
+
+Case 36: hist=[0, 0, 2, 0, 0, 0, 2, 0], index=-5.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 1 0 0 0
+ntreeConn       : 1 0 0 1
+njoint_loop_conn: 0 0 1 1
+nloop4conn      : 1 1 0 0
+nloop2conn      : 0 0 0 1
+nloop0conn      : 0 1 0 0
+defect          :  90  90 -90  90
+
+Case 37: hist=[0, 0, 2, 0, 0, 0, 2, 0], index=-5.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1 0 0 0
+ntreeConn       : 1 1 0 0
+njoint_loop_conn: 0 1 1 0
+nloop4conn      : 1 0 0 1
+nloop2conn      : 0 0 0 1
+nloop0conn      : 1 0 0 0
+defect          : -90  90 -90  90
+
+Case 38: hist=[0, 0, 1, 0, 0, 0, 3, 0], index=-6.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0 0
+ntreeConn       : 0 0 0 0
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 1 1 1
+nloop2conn      : 1 0 1 1
+nloop0conn      : 1 1 1 0
+defect          : 90 90 90 90
+
+Case 39: hist=[0, 0, 1, 0, 0, 0, 3, 0], index=-6.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         :  0  2 -0  0
+ntreeConn       : 1 0 0 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      :  1 -0  1  1
+nloop2conn      : 0 1 1 0
+nloop0conn      : 0 0 0 2
+defect          : -90  90  90 -90
+
+Case 40: hist=[0, 0, 1, 0, 0, 0, 3, 0], index=-6.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         :  0  2 -0  0
+ntreeConn       : 1 0 0 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      :  1 -0  1  1
+nloop2conn      : 0 1 1 0
+nloop0conn      : 0 0 0 2
+defect          : -90  90  90 -90
+
+Case 41: hist=[0, 0, 0, 0, 0, 0, 4, 0], index=-7.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 1 0 0 0
+ntreeConn       : 1 0 0 1
+njoint_loop_conn:  0 -0  0  0
+nloop4conn      : 1 1 1 1
+nloop2conn      : 0 1 1 0
+nloop0conn      : 1 0 0 1
+defect          :  90  90  90 -90
+
+Case 42: hist=[0, 0, 0, 0, 0, 0, 4, 0], index=-7.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 0 0 0 1
+ntreeConn       : 1 1 1 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 1 1 1
+nloop2conn      : 1 0 0 0
+nloop0conn      : 0 0 1 0
+defect          :  90 -90 -90  90
+
+Case 43: hist=[0, 2, 0, 0, 0, 0, 0, 0], index=-1.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 1
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          : 180   0
+
+Case 44: hist=[0, 2, 0, 0, 0, 0, 0, 0], index=-1.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 0 1
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          : 0 0
+
+Case 45: hist=[0, 1, 0, 0, 0, 1, 0, 0], index=-2.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 1
+nloop2conn      : 1 0
+nloop0conn      : 0 1
+defect          : 180 180
+
+Case 46: hist=[0, 1, 0, 0, 0, 1, 0, 0], index=-2.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 0 2
+ntreeConn       : 1 1
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 0
+nloop0conn      : 0 0
+defect          : 0 0
+
+Case 47: hist=[0, 1, 0, 0, 0, 1, 0, 0], index=-2.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 0 2
+ntreeConn       : 1 1
+njoint_loop_conn: 0 0
+nloop4conn      : 1 0
+nloop2conn      : 0 0
+nloop0conn      : 0 0
+defect          : 0 0
+
+Case 48: hist=[0, 0, 0, 0, 0, 2, 0, 0], index=-3.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 1 0
+ntreeConn       : 0 0
+njoint_loop_conn: 0 0
+nloop4conn      : 1 1
+nloop2conn      : 0 1
+nloop0conn      : 1 0
+defect          :   0 180
+
+Case 49: hist=[0, 0, 0, 0, 0, 2, 0, 0], index=-3.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1 0
+ntreeConn       : 1 1
+njoint_loop_conn: 0 0
+nloop4conn      : 1 1
+nloop2conn      : 0 0
+nloop0conn      : 0 0
+defect          : 0 0
+
+Case 50: hist=[2, 1, 0, 0, 0, 0, 0, 0], index=-1.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 0 1
+ntreeConn       : 1 0 1
+njoint_loop_conn: 1 1 0
+nloop4conn      : 0 0 0
+nloop2conn      : 0 0 0
+nloop0conn      : 0 0 0
+defect          : 180  90 -90
+
+Case 51: hist=[2, 1, 0, 0, 0, 0, 0, 0], index=-1.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 0 0 1
+ntreeConn       : 0 1 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 0
+nloop2conn      : 0 1 0
+nloop0conn      : 1 0 0
+defect          :   0  90 -90
+
+Case 52: hist=[1, 1, 0, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0
+ntreeConn       : 1 1 0
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 1
+nloop2conn      : 0 1 0
+nloop0conn      : 0 0 1
+defect          :  90  90 180
+
+Case 53: hist=[1, 1, 0, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 0 0 2
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 0
+nloop2conn      : 0 1 0
+nloop0conn      : 1 0 0
+defect          :  90 -90   0
+
+Case 54: hist=[1, 1, 0, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 0 0 2
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 0
+nloop2conn      : 0 1 0
+nloop0conn      : 1 0 0
+defect          :  90 -90   0
+
+Case 55: hist=[0, 1, 0, 0, 2, 0, 0, 0], index=-3.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 1 0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 1
+nloop2conn      : 0 1 0
+nloop0conn      : 0 0 1
+defect          : 90  0 90
+
+Case 56: hist=[0, 1, 0, 0, 2, 0, 0, 0], index=-3.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 0 0 1
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 1 1
+nloop4conn      : 1 0 0
+nloop2conn      : 0 0 0
+nloop0conn      :  0 -0  0
+defect          : -90   0  90
+
+Case 57: hist=[2, 0, 0, 0, 0, 1, 0, 0], index=-2.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 1 1
+nloop4conn      : 1 0 0
+nloop2conn      : 0 0 0
+nloop0conn      : 0 0 0
+defect          :   0  90 270
+
+Case 58: hist=[2, 0, 0, 0, 0, 1, 0, 0], index=-2.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 0 0 2
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 0
+nloop2conn      : 0 1 0
+nloop0conn      : 1 0 0
+defect          :   0 -90  90
+
+Case 59: hist=[2, 0, 0, 0, 0, 1, 0, 0], index=-2.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 0 0 2
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 0
+nloop2conn      : 0 1 0
+nloop0conn      : 1 0 0
+defect          :   0 -90  90
+
+Case 60: hist=[1, 0, 0, 0, 1, 1, 0, 0], index=-3.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         :  1  0 -0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 1 1 0
+nloop4conn      :  0 -0  1
+nloop2conn      : 0 0 0
+nloop0conn      :  0 -0  0
+defect          :  0 90 90
+
+Case 61: hist=[1, 0, 0, 0, 1, 1, 0, 0], index=-3.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1 0 0
+ntreeConn       : 1 0 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 0 1
+nloop2conn      : 0 1 0
+nloop0conn      : 1 0 0
+defect          :   0 -90  90
+
+Case 62: hist=[0, 0, 0, 0, 2, 1, 0, 0], index=-4.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0
+ntreeConn       : 0 1 1
+njoint_loop_conn: 0 0 0
+nloop4conn      : 1 1 1
+nloop2conn      : 1 0 0
+nloop0conn      : 0 0 1
+defect          : 180  90  90
+
+Case 63: hist=[0, 0, 0, 0, 2, 1, 0, 0], index=-4.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 0 2 0
+ntreeConn       :  1 -0  1
+njoint_loop_conn: 0 1 1
+nloop4conn      : 1 0 0
+nloop2conn      : 0 0 0
+nloop0conn      : 0 0 0
+defect          :   0  90 -90
+
+Case 64: hist=[0, 0, 0, 0, 2, 1, 0, 0], index=-4.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 0 2 0
+ntreeConn       :  1 -0  1
+njoint_loop_conn: 0 1 1
+nloop4conn      : 1 0 0
+nloop2conn      : 0 0 0
+nloop0conn      : 0 0 0
+defect          :   0  90 -90
+
+Case 65: hist=[4, 0, 0, 0, 0, 0, 0, 0], index=-1.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 0 0 1
+ntreeConn       : 1 0 0 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 0 1 0 0
+nloop2conn      : 1 0 1 0
+nloop0conn      : 0 2 0 0
+defect          :  90 270 -90 -90
+
+Case 66: hist=[4, 0, 0, 0, 0, 0, 0, 0], index=-1.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         :  0  0 -0  1
+ntreeConn       : 0 1 0 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 0 0 0
+nloop2conn      : 0 1 1 0
+nloop0conn      : 2 0 0 0
+defect          :  90  90 -90 -90
+
+Case 67: hist=[3, 0, 0, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0 0
+ntreeConn       : 1 1 0 0
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 0 0 1
+nloop2conn      : 0 1 1 0
+nloop0conn      : 1 0 0 1
+defect          :  90  90 -90 270
+
+Case 68: hist=[3, 0, 0, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         : 0 2 0 0
+ntreeConn       : -0  1  0  1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 0 0 0
+nloop2conn      : 0 0 1 1
+nloop0conn      : 2 0 0 0
+defect          : -90  90 -90  90
+
+Case 69: hist=[3, 0, 0, 0, 1, 0, 0, 0], index=-2.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         : 0 2 0 0
+ntreeConn       : -0  1  0  1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 0 0 0
+nloop2conn      : 0 0 1 1
+nloop0conn      : 2 0 0 0
+defect          : -90  90 -90  90
+
+Case 70: hist=[2, 0, 0, 0, 2, 0, 0, 0], index=-3.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 0 0 1 0
+ntreeConn       : 1 0 0 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 0 0 1
+nloop2conn      : -0  1  1  0
+nloop0conn      : 0 0 0 2
+defect          :  90 -90  90  90
+
+Case 71: hist=[2, 0, 0, 0, 2, 0, 0, 0], index=-3.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 1 0 0 0
+ntreeConn       : 0 1 0 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 0 0 1
+nloop2conn      : 0 1 1 0
+nloop0conn      : 2 0 0 0
+defect          : -90  90 -90  90
+
+Case 72: hist=[1, 0, 0, 0, 3, 0, 0, 0], index=-4.0, odd=0, loop4=1, loop2=0, tree=0, pair=0
+xextern         : 0 0 0 0
+ntreeConn       : 1 1 1 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 0 1 1
+nloop2conn      : 0 1 0 0
+nloop0conn      :  0  0  1 -0
+defect          : 90 90 90 90
+
+Case 73: hist=[1, 0, 0, 0, 3, 0, 0, 0], index=-4.0, odd=0, loop4=0, loop2=1, tree=0, pair=0
+xextern         :  0  2  0 -0
+ntreeConn       : 1 1 1 1
+njoint_loop_conn: 1 0 0 1
+nloop4conn      : 0 0 1 0
+nloop2conn      : 0 0 0 0
+nloop0conn      : 0 0 0 0
+defect          : -90  90  90 -90
+
+Case 74: hist=[1, 0, 0, 0, 3, 0, 0, 0], index=-4.0, odd=0, loop4=0, loop2=0, tree=2, pair=0
+xextern         :  0  2  0 -0
+ntreeConn       : 1 1 1 1
+njoint_loop_conn: 1 0 0 1
+nloop4conn      : 0 0 1 0
+nloop2conn      : 0 0 0 0
+nloop0conn      : 0 0 0 0
+defect          : -90  90  90 -90
+
+Case 75: hist=[0, 0, 0, 0, 4, 0, 0, 0], index=-5.0, odd=1, loop4=1, loop2=0, tree=1, pair=0
+xextern         : 1 0 0 0
+ntreeConn       : 1 1 1 1
+njoint_loop_conn: 1 0 1 0
+nloop4conn      : 0 1 0 1
+nloop2conn      : 0 0 0 0
+nloop0conn      : 0 0 0 0
+defect          :  90  90 -90  90
+
+Case 76: hist=[0, 0, 0, 0, 4, 0, 0, 0], index=-5.0, odd=1, loop4=0, loop2=0, tree=1, pair=1
+xextern         : 0 0 0 1
+ntreeConn       : 0 0 1 1
+njoint_loop_conn: 0 0 0 0
+nloop4conn      : 1 1 1 0
+nloop2conn      : 1 0 0 1
+nloop0conn      : 0 2 0 0
+defect          :  90 -90  90 -90
+
