@@ -2,7 +2,7 @@
 - Test website (broken links) with:
 https://validator.w3.org/checklink?uri=https%3A%2F%2Fzoharl3.github.io%2F&hide_type=all&depth=&check=Check
 
-- I'm editing index.html with bluegriffon.
+- I'm editing index.html with bluegriffon
     - DirtyMarkup Formatter
 https://www.10bestdesign.com/dirtymarkup
 
