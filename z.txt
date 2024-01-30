@@ -1,4 +1,7 @@
 
+- repository
+https://github.com/zoharl3/zoharl3.github.io
+
 - Test website (broken links) with:
 https://validator.w3.org/checklink?uri=https%3A%2F%2Fzoharl3.github.io%2F&hide_type=all&depth=&check=Check
 
@@ -10,3 +13,6 @@ https://www.10bestdesign.com/dirtymarkup
 
 - private stuff in
 c:\prj\www\
+
+- google3239122200677cfa.html was created with verifying url ("Inspect the URL")
+https://support.google.com/webmasters/answer/9012289#test_live_page
