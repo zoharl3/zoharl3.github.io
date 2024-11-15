@@ -1,4 +1,7 @@
 
+- a note is created with
+pandoc note2.txt -o note2.pdf
+
 - repository
 https://github.com/zoharl3/zoharl3.github.io
 
