@@ -1,3 +1,5 @@
+- sync with
+gitsync
 
 - a note is created with
 pandoc note2.txt -o note2.pdf
